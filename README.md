@@ -70,6 +70,16 @@ func loginConta(contas: inout [ContaBank]) {
   
   <img width="305" height="182" alt="image" src="https://github.com/user-attachments/assets/48fc4830-0d22-410e-838a-b58aa8940f43" />
 
+### User features
+
+- **Deposit:** asks for an amount and adds it to the `saldo` of the logged-in account.
+
+  <img width="352" height="219" alt="Deposit" src="https://github.com/user-attachments/assets/4f90143e-724b-4f36-af44-c666e5499d73" />
+
+- **Transfer:** asks for the destination account number, finds it in the array, then moves the amount from the user's `saldo` to the destination's `saldo`.
+
+  <img width="353" height="260" alt="Transfer" src="https://github.com/user-attachments/assets/44c55642-5584-4dee-9e4a-202cbe602e6f" />
+
 ## 3. ▶️ Compile & Run
 
 > [!NOTE]
