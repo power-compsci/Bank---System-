@@ -98,4 +98,4 @@ swiftc main.swift -o contabank
 - **Name:** Makoto Ushizaki
 - **Email:** 10769688@mackenzista.com.br
 - **LinkedIn:** [makoto-ushizaki](https://www.linkedin.com/in/makoto-ushizaki-96a670403)
-- **GitHub:** [@mackcoder](https://github.com/mackcoder)
+- **GitHub:** [@mackcoder](https://github.com/power-compsci)
