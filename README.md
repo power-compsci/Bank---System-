@@ -19,7 +19,7 @@
   <img width="353" height="400" alt="image" src="https://github.com/user-attachments/assets/90ca63e5-1438-4c45-ad7b-e3596a33eafc" />
 
 - Code function to find admin's account
-  -  After logging in, this function checks if it's an admin or not. It compares if the ID and password stored in the struct ContaBank corresponds to the admin's credentials.
+  -  After the user enters an account number and password, the `loginConta` function searches the accounts array for a match. When it finds one, it checks the `isAdmin` field of the `ContaBank` struct to decide which menu to open: the admin menu or the user menu.
 ```swift
 func loginConta(contas: inout [ContaBank]) {
     print("Fazer login:")
@@ -58,5 +58,44 @@ func loginConta(contas: inout [ContaBank]) {
     }
 }
 ```
-## 3. 
+- Administrator
+  - Lists accounts by searching through the array 'contas' and gets the information 'titular', 'numero' and 'saldo'. These are struct identifiers meant to find the right information.
+  <img width="215" height="398" alt="image" src="https://github.com/user-attachments/assets/dcd2c84e-65c9-43c1-8465-cfcf3119a73b" />
 
+  - Removes accounts by requesting the account's ID, calls function remove based on the given ID.
+  <img width="305" height="182" alt="image" src="https://github.com/user-attachments/assets/48fc4830-0d22-410e-838a-b58aa8940f43" />
+
+- User
+  - Deposit -> asks the amount, adds to the user's bank balance in its array position and uses 'saldo' as an identifier.
+  <img width="352" height="219" alt="image" src="https://github.com/user-attachments/assets/4f90143e-724b-4f36-af44-c666e5499d73" />
+
+  - Transfer -> send an amount to another registered account, comparing if the ID is correlated to the destination's ID and using 'numero' and 'saldo' as an identifier.
+  <img width="353" height="260" alt="image" src="https://github.com/user-attachments/assets/44c55642-5584-4dee-9e4a-202cbe602e6f" />
+
+## 3. ▶️ Compile & Execution 
+> [!NOTE]
+   > **Prerequisites -> installed swift (macOS, Linux or Windows)**
+- Platform: VSCode
+
+**Compile:**
+```bash
+swiftc main.swift -o contabank
+```
+
+**Run:**
+```bash
+./contabank
+```
+## 4. 🚀 Possible improvements
+* Validate user input and handle errors without using `!`.
+* Prevent negative balances and duplicate account numbers.
+* Persist data in a file (JSON) or a database.
+* Store passwords securely (hashing).
+* Record transaction history (statement).
+
+## 5. 📩 Contact
+
+- **Name**: Naoto Ushizaki
+- **Email**: 10437445@mackenzista.com.br
+- **Linkedin**: www.linkedin.com/in/naoto-ushizaki-30b94a172
+- **GitHub**: [@mackcoder](https://github.com/mackcoder)
