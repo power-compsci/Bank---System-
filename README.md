@@ -3,22 +3,25 @@
 
 ## 1. 📜 Introduction
 <div align="justify">
-  This project simulates a bank system in which users can create accounts, log in, check their balance, make deposits, transfer money and pay bills, while an admin account can list and remove accounts. I built it to practice core programming concepts such as structs, arrays, functions, control flow and user input handling.
-  All data is stored in an in-memory array of <code>ContaBank</code> structs, so it is lost every time the program is closed.
+  ContaBank is a command-line bank system that simulates the everyday operations of a bank account. Users can create an account, log in, check their balance, make deposits, transfer money and pay bills, while a special admin account can list and remove accounts.
+
+I built this project to practice core programming concepts such as structs, arrays, functions, control flow and user input handling. All data is stored in an in-memory array of ContaBank structs, so it is lost every time the program is closed.
 </div>
 
-## 2. ⚙️ Functions
-- Menu
-  - Main menu shows options from 1 to 3 and lets the user register or login an existing account.
+## 2. ⚙️ How it works
+### Menus
+When the program starts, the **main menu** offers three options: register a new account, log in to an existing one, or exit.
+
   <img width="207" height="103" alt="Screenshot 2026-10-17 161908" src="https://github.com/user-attachments/assets/51e97d17-963d-4377-a08e-662d5cb11ed6" />
 
-  - Admin's menu lets him list accounts and remove accounts.
+Admin's menu lets him list accounts and remove accounts.
+  
   <img width="208" height="105" alt="image" src="https://github.com/user-attachments/assets/3cc7b78a-f362-4537-85cb-14b603704150" />
 
-  - After registering a new account -> login with ID and password -> user's menu interface is shown
+After registering an account and logging in with its number and password, the **user menu** is shown.
   <img width="353" height="400" alt="image" src="https://github.com/user-attachments/assets/90ca63e5-1438-4c45-ad7b-e3596a33eafc" />
 
-- Code function to find admin's account
+### Login and admin detection
   -  After the user enters an account number and password, the `loginConta` function searches the accounts array for a match. When it finds one, it checks the `isAdmin` field of the `ContaBank` struct to decide which menu to open: the admin menu or the user menu.
 ```swift
 func loginConta(contas: inout [ContaBank]) {
@@ -58,24 +61,19 @@ func loginConta(contas: inout [ContaBank]) {
     }
 }
 ```
-- Administrator
-  - Lists accounts by searching through the array 'contas' and gets the information 'titular', 'numero' and 'saldo'. These are struct identifiers meant to find the right information.
+### Administrator features
+- **List accounts:** goes through the `contas` array and prints each account's `titular`, `numero` and `saldo`.
+  
   <img width="215" height="398" alt="image" src="https://github.com/user-attachments/assets/dcd2c84e-65c9-43c1-8465-cfcf3119a73b" />
 
-  - Removes accounts by requesting the account's ID, calls function remove based on the given ID.
+- **Remove account:** asks for the account number and removes the matching account from the array. The admin account itself cannot be removed.
+  
   <img width="305" height="182" alt="image" src="https://github.com/user-attachments/assets/48fc4830-0d22-410e-838a-b58aa8940f43" />
 
-- User
-  - Deposit -> asks the amount, adds to the user's bank balance in its array position and uses 'saldo' as an identifier.
-  <img width="352" height="219" alt="image" src="https://github.com/user-attachments/assets/4f90143e-724b-4f36-af44-c666e5499d73" />
+## 3. ▶️ Compile & Run
 
-  - Transfer -> send an amount to another registered account, comparing if the ID is correlated to the destination's ID and using 'numero' and 'saldo' as an identifier.
-  <img width="353" height="260" alt="image" src="https://github.com/user-attachments/assets/44c55642-5584-4dee-9e4a-202cbe602e6f" />
-
-## 3. ▶️ Compile & Execution 
 > [!NOTE]
-   > **Prerequisites -> installed swift (macOS, Linux or Windows)**
-- Platform: VSCode
+> **Prerequisite:** Swift installed on your machine (macOS, Linux or Windows). This project was developed in VSCode.
 
 **Compile:**
 ```bash
@@ -86,16 +84,18 @@ swiftc main.swift -o contabank
 ```bash
 ./contabank
 ```
+
 ## 4. 🚀 Possible improvements
-* Validate user input and handle errors without using `!`.
-* Prevent negative balances and duplicate account numbers.
-* Persist data in a file (JSON) or a database.
-* Store passwords securely (hashing).
-* Record transaction history (statement).
+
+- Validate user input and handle errors without using `!`.
+- Prevent negative balances and duplicate account numbers.
+- Persist data in a file (JSON) or a database.
+- Store passwords securely (hashing).
+- Record transaction history (statement).
 
 ## 5. 📩 Contact
 
-- **Name**: Naoto Ushizaki
-- **Email**: 10437445@mackenzista.com.br
-- **Linkedin**: www.linkedin.com/in/naoto-ushizaki-30b94a172
-- **GitHub**: [@mackcoder](https://github.com/mackcoder)
+- **Name:** Makoto Ushizaki
+- **Email:** 10769688@mackenzista.com.br
+- **LinkedIn:** [makoto-ushizaki](https://www.linkedin.com/in/makoto-ushizaki-96a670403)
+- **GitHub:** [@mackcoder](https://github.com/mackcoder)
