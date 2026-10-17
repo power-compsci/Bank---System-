@@ -19,10 +19,11 @@ Admin's menu lets him list accounts and remove accounts.
   <img width="208" height="105" alt="image" src="https://github.com/user-attachments/assets/3cc7b78a-f362-4537-85cb-14b603704150" />
 
 After registering an account and logging in with its number and password, the **user menu** is shown.
+  
   <img width="353" height="400" alt="image" src="https://github.com/user-attachments/assets/90ca63e5-1438-4c45-ad7b-e3596a33eafc" />
 
 ### Login and admin detection
-  -  After the user enters an account number and password, the `loginConta` function searches the accounts array for a match. When it finds one, it checks the `isAdmin` field of the `ContaBank` struct to decide which menu to open: the admin menu or the user menu.
+After the user enters an account number and password, the `loginConta` function searches the accounts array for a match. When it finds one, it checks the `isAdmin` field of the `ContaBank` struct to decide which menu to open: the admin menu or the user menu.
 ```swift
 func loginConta(contas: inout [ContaBank]) {
     print("Fazer login:")
